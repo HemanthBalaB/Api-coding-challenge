@@ -1,0 +1,29 @@
+drop database project;
+create database project;
+
+CREATE TABLE IF NOT EXISTS userdata (
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    roles VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS task (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    description TEXT,
+    due_date DATE,
+    priority ENUM('LOW', 'MEDIUM', 'HIGH'),
+    status ENUM('PENDING', 'IN_PROGRESS', 'COMPLETED')
+);
+select * from userdata;
+INSERT INTO userdata (name, email, password, roles) VALUES
+('John', 'john@gmail.com', '$2a$10$GaE6vKzNyRgyXxXjlRT2UuJ9z2xJGav0nI0MCUtKgNk7dxcd1P7Na', 'ROLE_USER'),
+('Jane', 'jane@gmail.com', '$2a$10$9lhLJzW3bYxqroD3VLs6VO9T6BwG2CVaJgMRa0hXPmu53RKU/FZji', 'ROLE_ADMIN');
+
+
+INSERT INTO task (title, description, due_date, priority, status) VALUES
+('Review Codebase', 'Go through the repository and remove unused files.', '2025-07-02', 'MEDIUM', 'PENDING'),
+('Deploy to Production', 'Deploy the Spring Boot app to cloud server.', '2025-07-03', 'HIGH', 'PENDING'),
+('Update Documentation', 'Improve README and API specs.', '2025-07-04', 'LOW', 'IN_PROGRESS');
