@@ -1,0 +1,29 @@
+<div class="menu-container">
+  <h2>Main Menu</h2>
+  <ul class="menu-list">
+    <li 
+      *ngFor="let option of menuOptions"
+      [class.active]="selectedOption === option.value"
+      (click)="selectOption(option.value)"
+    >
+      <span class="menu-icon">{{ option.icon }}</span>
+      {{ option.label }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedOption === 'show'">
+  <app-show-tasks></app-show-tasks>
+</div>
+<div *ngIf="selectedOption === 'get'">
+  <app-get-task-by-id></app-get-task-by-id>
+</div>
+<div *ngIf="selectedOption === 'create'">
+  <app-create-task></app-create-task>
+</div>
+<div *ngIf="selectedOption === 'update'">
+  <app-update-task></app-update-task>
+</div>
+<div *ngIf="selectedOption === 'delete'">
+  <app-delete-task></app-delete-task>
+</div>

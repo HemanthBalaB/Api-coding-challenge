@@ -1,0 +1,40 @@
+<div class="login-bg">
+  <div class="login-container">
+    <h2>🔒 Secure Login</h2>
+    <form (ngSubmit)="generate()">
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="userName"
+          name="username"
+          required
+          autocomplete="username"
+          placeholder="Enter username"
+        />
+      </div>
+      <div class="password-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            [(ngModel)]="passWord"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder="Enter password"
+          />
+          <span class="eye-icon" (click)="toggleShowPassword()" [attr.title]="showPassword ? 'Hide' : 'Show'">
+            <!-- Closed Eye (hidden) SVG -->
+            <svg *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" height="22" width="22" fill="#888"><path d="M11 5c-4 0-7.38 2.62-9 7 1.62 4.38 5 7 9 7s7.38-2.62 9-7c-1.62-4.38-5-7-9-7zm0 12c-3.3 0-6.21-2.02-7.75-5C4.79 9.02 7.7 7 11 7s6.21 2.02 7.75 5C17.21 14.98 14.3 17 11 17zm0-10a3 3 0 0 0 0 6 3 3 0 0 0 0-6zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+            <!-- Open Eye (visible) SVG -->
+            <svg *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" height="22" width="22" fill="#007bff"><path d="M11 5c-4 0-7.38 2.62-9 7 1.62 4.38 5 7 9 7 1.32 0 2.61-.2 3.8-.58l-1.7-1.7C12.71 17 11.87 17 11 17c-3.3 0-6.21-2.02-7.75-5C4.79 9.02 7.7 7 11 7c.87 0 1.71.11 2.5.32l-1.34 1.34C12.1 8.23 11.56 8 11 8a3 3 0 1 0 0 6c.56 0 1.1-.23 1.55-.64l1.34 1.34C13.71 15.89 12.87 16 12 16zm7.19-1.19l-1.41 1.41A8.99 8.99 0 0 1 11 19c-4 0-7.38-2.62-9-7 1.25-3.38 4.08-5.87 7.44-6.65l-1.41-1.41A.996.996 0 1 1 8.71 2.7l12 12a.996.996 0 1 1-1.41 1.41z"/></svg>
+          </span>
+        </div>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

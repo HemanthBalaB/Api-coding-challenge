@@ -1,0 +1,112 @@
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ececec 60%, #f7f7f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 38px 28px 32px 28px;
+  width: 100%;
+  max-width: 380px;
+  margin: 24px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: float-in 0.7s cubic-bezier(.42,0,.58,1) both;
+}
+
+@keyframes float-in {
+  0% { opacity: 0; transform: translateY(30px) scale(0.97);}
+  100% { opacity: 1; transform: none; }
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.login-container form div {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 500;
+  color: #444;
+  letter-spacing: 0.1px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 12px 12px;
+  border: 1.5px solid #dde3ec;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  background: #f8fbfe;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 2px;
+}
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.08);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-wrapper input {
+  width: 100%;
+  padding-right: 38px;
+}
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+  opacity: 0.68;
+}
+.eye-icon:hover {
+  opacity: 1;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(90deg, #007bff 70%, #0056b3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.16s;
+  box-shadow: 0 2px 10px rgba(0,123,255,0.10);
+  letter-spacing: 0.7px;
+}
+.login-container button:hover {
+  background: linear-gradient(90deg, #0056b3 70%, #007bff 100%);
+  transform: translateY(-1px) scale(1.03);
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 26px 6vw;
+  }
+}
